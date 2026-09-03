@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body style="background-color: lightgreen">
+
+<center>
+
+<h1>REGISTRATION FORM</h1>
+
+<form action="S2.html">
+<table>
+    <tr>
+        <th>Name</th>
+        <td>
+            <input type="text" placeholder="Enter your name" required>
+        </td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <td>
+            <input type="radio" name="gender" required>Male
+            <br>
+            
+            <input type="radio" name="gender" required>Female
+            <br>
+            
+            <input type="radio" name="gender" required>Not prefer to say
+
+        </td>
+    </tr>
+    <tr>
+        <th>Languages Known </th>
+        <td>
+            <input type="text" placeholder="Enter language known" required>
+        </td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>
+            <input type="email" placeholder="Enter your email" required>
+        </td>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <td>
+            <input type="text" placeholder="Enter your phone number" required>
+        </td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td>
+            <textarea rows="4"
+            columns="30"
+            placeholder="Enter your Address"
+            required>
+        </textarea>
+        </td>
+    </tr>
+    <tr>
+        <th>Location</th>
+        <td>
+            <select required>
+                <option value="">Select your location</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Chennai">Chennai</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>UploadCV</th>
+        <td>
+            <input type="file" name="filename" required>
+        </td>
+    </tr>
+
+</table>
+<br>
+<input type="submit" value="submit">
+
+<input type="reset" value="clear">
+</form>
+</center>
+</body>
+</html>
