@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>EMI CALCULATOR</title>
+    </head>
+    <body style="background-color: cyan;">
+        <center>
+            <h1>BANK LOAN FORM</h1>
+
+        </center>
+        <form onsubmit="calculateEMI();return false;">
+            <table align="center">
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" id="name" required></td>
+                </tr>
+                <tr>
+                    <th>Occupation</th>
+                    <td><input type="text" id="occupation" required></td>
+                </tr>
+                <tr>
+                    <th>Loan Amount</th>
+                    <td><input type="number" id="Loanamount" required></td>
+                </tr>
+                <tr>
+                    <th>Rate of interest</th>
+                    <td><input type="number" id="rateofinterest"  step="0.01"required></td>
+                </tr>
+                <tr>
+                    <th>Tenure</th>
+                    <td><input type="number" id="tenure" required></td>
+                </tr>
+                <tr> <td colspan="2" align="center"> <input type="submit" value="Calculate EMI"> </td> </tr>
+            </table>
+        </form>
+        <div id="result" align="center"></div>
+        <script>
+            function calculateEMI(){
+                let amount=Number(document.getElementById("Loanamount").value);
+                let rate=Number(document.getElementById("rateofinterest").value);
+                let tenure=Number(document.getElementById("tenure").value);
+                let monthlyRate=rate/(12*100);
+                let emi=(amount*monthlyRate*Math.pow(1+monthlyRate,tenure))/(Math.pow(1+monthlyRate,tenure)-1);
+                 document.getElementById("result").innerHTML=
+                 "<h2>EMI Details</h2>"+
+                 "Name:"+document.getElementById("name").value+"<br>"+
+                 "Occupation: " + document.getElementById("occupation").value + "<br>" + "Loan Amount: ₹" + amount + "<br>" + "Rate of Interest: " + rate + "%<br>" + "Tenure: " + tenure + " Months<br>" +
+                 "<h3>EMI:"+emi.toFixed(2)+"</h3>";
+
+           }
+
+        </script>
+    </body>
+</html>
