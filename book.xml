@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes">
+<! DOCTYPE bookstore SYSTEM "books.dtd">
+<bookstore
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="book.xsd">
+
+<book>
+<title>Web Programming</title>
+<author>chrisbates</author>
+<ISBN>123-456-789</ISBN>
+<edition>3</edition>
+<price>350</price>
+</book>
+<book>
+<title>internet worldwide</title>
+<autor>ditel</author>
+<ISBN>123-456-781</ISBN>
+<edition>3</edition>
+<price>346</price>
+</book>
+</bookstore>
