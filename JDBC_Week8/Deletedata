@@ -1,0 +1,48 @@
+import java.sql.*;
+import java.util.*;
+
+public class Delete {
+
+    public static void main(String args[]) {
+
+        try {
+
+            // Load JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Connect to database
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/company",
+                "root",
+                ""
+            );
+
+            // Create Statement
+            Statement st = con.createStatement();
+
+            // Create Scanner
+            Scanner sc = new Scanner(System.in);
+
+            // Get employee number
+            System.out.println("Enter the Employee Number to Delete:");
+            int empno = sc.nextInt();
+
+            // DELETE query
+            String qry =
+                "DELETE FROM employee WHERE employee_no=" + empno;
+
+            // Execute DELETE query
+            st.executeUpdate(qry);
+
+            System.out.println("Data Deleted Successfully");
+
+            // Close connection
+            con.close();
+
+        }
+        catch (Exception e) {
+
+            System.out.println(e);
+        }
+    }
+}
