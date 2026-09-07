@@ -1,0 +1,53 @@
+import java.sql.*;
+import java.util.*;
+
+public class Update {
+
+    public static void main(String args[]) {
+
+        try {
+
+            // Load JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Connect to MySQL database
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/company",
+                "root",
+                ""
+            );
+
+            // Create Statement
+            Statement st = con.createStatement();
+
+            // Create Scanner object
+            Scanner sc = new Scanner(System.in);
+
+            // Get employee number
+            System.out.println("Enter the Employee Number to Update Salary:");
+            int empno = sc.nextInt();
+
+            // Get new salary
+            System.out.println("Enter the new Salary:");
+            double esal = sc.nextDouble();
+
+            // UPDATE query
+            String qry =
+                "UPDATE employee SET salary=" + esal +
+                " WHERE employee_no=" + empno;
+
+            // Execute UPDATE query
+            st.executeUpdate(qry);
+
+            System.out.println("Data Updated Successfully");
+
+            // Close connection
+            con.close();
+
+        }
+        catch (Exception e) {
+
+            System.out.println(e);
+        }
+    }
+}
