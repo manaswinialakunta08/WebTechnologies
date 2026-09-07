@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="styleshet" href="vallidation.css">
+    <script>
+     function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let contact = document.getElementById("contact").value;
+
+    let namePattern = /^[A-Za-z ]+$/;
+    let emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    let contactPattern = /^[6-9][0-9]{9}$/;
+
+    if (!namePattern.test(name)) {
+        alert("Please enter a valid name");
+        return false;
+    }
+
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email");
+        return false;
+    }
+
+    if (!contactPattern.test(contact)) {
+        alert("Please enter a valid 10-digit contact number");
+        return false;
+    }
+
+    alert("Registered Successfully");
+    return true;
+}
+    </script>
+</head>
+<body style="font-family:Arial; background-color:lightgrey;">
+    <center>
+        <h2 style="text-align:center; color:blue;">Job Registration Form </h2>
+        <form onsubmit="return validateForm()">
+            Name:
+            <input type="text" id="name">
+            <br><br>
+            Email:
+            <input type="email" id="email">
+            <br><br>
+            Contact:
+            <input type="text" id="contact">
+            <br><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </center>
+    
+</body>
+</html>
