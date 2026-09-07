@@ -1,0 +1,15 @@
+<html>
+    <body bgcolor="red">
+        <h3>CLICK THE LINKS BELOW</h3>
+        <a href="intro.html" target="f3">INTRODUCTION</a>
+        <br>
+        <a href="dept.html" target="f3">DEPARTMENT</a>
+        <br>
+        <a href="add.html" target="f3">ADDRESS</a>
+        <br>
+        <a href="feed.html" target="f3">FEEDBACK</a>
+        <br>
+        <a href="gall.html" target="f3">GALLERY</a>
+        
+    </body>
+</html>
