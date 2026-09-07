@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="books.css"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="books.xsd">
+<book course="cse">
+    <title>Introduction to Computer Science</title>
+    <author>John Doe</author>
+    <price>59.99</price>
+</book>
+<book course="math">
+    <title>Calculus Made Easy</title>
+    <author>Jane Smith</author>
+    <price>39.99</price>
+</book>
+</catalog>
