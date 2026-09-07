@@ -1,0 +1,15 @@
+title {
+    font-family: serif;
+    color: green;
+    font-size: 18pt;
+}
+author{
+    font-family: sans-serif;
+    color: blue;
+    font-size: 14pt;
+}
+price{
+    font-family: sans-serif;
+    color: red;
+    font-size: 12pt;
+}
