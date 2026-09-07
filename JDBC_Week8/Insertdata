@@ -1,0 +1,59 @@
+import java.sql.*;
+import java.util.*;
+
+public class InsertTable {
+
+    public static void main(String args[]) {
+
+        try {
+
+            // Load JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Connect to company database
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/company",
+                "root",
+                ""
+            );
+
+            // Create Statement
+            Statement st = con.createStatement();
+
+            // Create Scanner
+            Scanner sc = new Scanner(System.in);
+
+            System.out.println("Enter employee details:");
+
+            System.out.print("Enter employee number: ");
+            int no = sc.nextInt();
+
+            System.out.print("Enter name: ");
+            String name = sc.next();
+
+            System.out.print("Enter salary: ");
+            double salary = sc.nextDouble();
+
+            System.out.print("Enter department: ");
+            String department = sc.next();
+
+            // INSERT query
+            String qry =
+                "INSERT INTO employee(employee_no, name, salary, department) " +
+                "VALUES (" + no + ", '" + name + "', " + salary + ", '" + department + "')";
+
+            // Execute INSERT query
+            st.executeUpdate(qry);
+
+            System.out.println("Row Inserted Successfully");
+
+            // Close connection
+            con.close();
+
+        }
+        catch(Exception e) {
+
+            System.out.println(e);
+        }
+    }
+}
