@@ -1,0 +1,50 @@
+import java.sql.*;
+
+public class EmployeeCRUD {
+
+    public static void main(String[] args) {
+
+        String url = "jdbc:mysql://localhost:3306/company";
+        String username = "root";
+        String password = "";
+
+        try {
+
+            // Load MySQL JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Connect to MySQL
+            Connection con = DriverManager.getConnection(
+                    url,
+                    username,
+                    password
+            );
+
+            System.out.println("Database connected successfully!");
+
+            // Create Statement
+            Statement st = con.createStatement();
+
+            // Create employee table
+            String sql = """
+                    CREATE TABLE IF NOT EXISTS employee (
+                        employee_no INT PRIMARY KEY,
+                        name VARCHAR(50),
+                        salary DOUBLE,
+                        department VARCHAR(50)
+                    )
+                    """;
+
+            st.executeUpdate(sql);
+
+            System.out.println("Employee table created successfully!");
+
+            // Close connection
+            st.close();
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
